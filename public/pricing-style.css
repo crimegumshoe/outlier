@@ -1,0 +1,184 @@
+/* --- PRICING PAGE SPECIFIC STYLES --- */
+
+.pricing-main {
+    padding: 4rem 0;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-header .section-title {
+    font-size: 3.5rem; /* Uses class from landing-style.css */
+    margin-bottom: 1rem;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.pricing-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 100%;
+    /* Reveal animation */
+    opacity: 0;
+    transform: translateY(30px);
+}
+.pricing-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.free-tier.is-visible {
+    transition-delay: 0.1s;
+}
+.pro-tier.is-visible {
+    transition-delay: 0.2s;
+}
+
+
+.plan-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1rem 0;
+    color: white;
+}
+.price span {
+    font-size: 1.25rem;
+}
+.period {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #a0a8c2;
+}
+
+.plan-description {
+    color: #a0a8c2;
+    min-height: 40px; /* Aligns buttons */
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+}
+.feature-list li {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+.feature-list .check {
+    color: var(--primary-glow);
+    margin-right: 0.5rem;
+}
+.free-tier .feature-list .check {
+    color: #888;
+}
+.free-tier .feature-list li:first-child .check {
+    color: var(--primary-glow); /* First feature is enabled */
+}
+
+
+.cta-button {
+    width: 100%;
+    background-color: #333;
+    color: #888;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: default;
+}
+
+.pro-cta {
+    background: var(--secondary-glow);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: filter 0.2s;
+}
+.pro-cta:hover {
+    filter: brightness(1.2);
+}
+.pro-cta:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+/* --- THE GLOWING PRO CARD --- */
+.pro-tier {
+    position: relative;
+    transform: scale(1.05); /* Make it stand out */
+    overflow: hidden; /* Important for the border effect */
+}
+.pro-tier:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background-color: var(--primary-glow);
+    color: var(--bg-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* The Animated Gradient Border */
+.pro-tier::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 180deg at 50% 50%,
+        var(--secondary-glow), 
+        var(--primary-glow),
+        var(--secondary-glow)
+    );
+    animation: rotate-border 4s linear infinite;
+    z-index: -1; /* Place behind the card's content */
+}
+
+@keyframes rotate-border {
+    100% { transform: rotate(360deg); }
+}
+
+.pro-tier::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-color);
+    border-radius: 15px; /* Must be 1px less than card's border-radius */
+    z-index: -1;
+}

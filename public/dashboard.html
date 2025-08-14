@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Nichefy</title>
+    <!-- Use the landing page styles for the base theme -->
+    <link rel="stylesheet" href="/landing-style.css"> 
+    <link rel="stylesheet" href="/dashboard-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Consistent Dynamic Background -->
+    <div class="background-effects">
+        <div id="mouse-glow"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="page-wrapper">
+        <header class="header">
+            <a href="/" class="logo"><span>Nichefy</span></a>
+            <nav class="nav">
+                <a href="/pricing">Pricing</a>
+                <button id="logout-button">Logout</button>
+            </nav>
+        </header>
+
+        <main id="dashboard-content">
+            <!-- Loader will show initially -->
+            <div class="loader"></div>
+            
+            <!-- Pro View content will be built here by the script -->
+            <!-- Free View content (upgrade prompt) will be built here if needed -->
+
+        </main>
+    </div>
+    
+    <script type="module" src="/dashboard-script.js"></script>
+</body>
+</html>

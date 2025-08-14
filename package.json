@@ -1,0 +1,25 @@
+{
+  "name": "yt-outliers-engine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "worker": "node worker.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@paddle/paddle-node-sdk": "^3.2.0",
+    "@supabase/supabase-js": "^2.55.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
+}

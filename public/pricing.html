@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Nichefy</title>
+    <!-- We need both stylesheets for a consistent theme -->
+    <link rel="stylesheet" href="/landing-style.css"> 
+    <link rel="stylesheet" href="/pricing-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- The same dynamic background from the landing page -->
+    <div class="background-effects">
+        <div id="mouse-glow"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="content-wrapper">
+        <header class="header">
+            <a href="/" class="logo"><span>Nichefy</span></a>
+            <nav class="nav">
+                <a href="/#features">Features</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="/dashboard" class="nav-button">Dashboard</a>
+            </div>
+        </header>
+
+        <main class="pricing-main">
+            <div class="pricing-header">
+                <h1 class="section-title">Become a Pro</h1>
+                <p class="subtitle">Choose the plan that will ignite your creative process.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free Plan Card (De-emphasized) -->
+                <div class="pricing-card free-tier">
+                    <h3 class="plan-title">Free</h3>
+                    <div class="price"><span>$0</span></div>
+                    <p class="plan-description">A starting point to explore. Log in to get started.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">✓</span> Limited Database Access</li>
+                        <li><span class="check">✗</span> AI-Powered "Why it's Viral"</li>
+                        <li><span class="check">✗</span> Shorts & Long-form Filters</li>
+                        <li><span class="check">✗</span> Full Access to 24/7 Engine</li>
+                    </ul>
+                    <button class="cta-button" disabled>Your Current Plan</button>
+                </div>
+
+                <!-- Pro Plan Card (Highlighted) -->
+                <div class="pricing-card pro-tier">
+                    <div class="recommended-badge">Recommended</div>
+                    <h3 class="plan-title">Nichefy Pro</h3>
+                    <div class="price">$10 <span class="period">/ month</span></div>
+                    <p class="plan-description">Unlock the full power of the discovery engine.</p>
+                    <ul class="feature-list">
+                        <li><span class="check">✓</span> Full Access to Outlier Database</li>
+                        <li><span class="check">✓</span> AI-Powered "Why it's Viral"</li>
+                        <li><span class="check">✓</span> Shorts & Long-form Filters</li>
+                        <li><span class="check">✓</span> Full Access to 24/7 Engine</li>
+                    </ul>
+                    <button id="upgrade-button" class="cta-button pro-cta">Upgrade to Pro</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Load Paddle.js and our script -->
+    <script src="https://cdn.paddle.com/v2/paddle.js"></script>
+    <script type="module" src="/pricing-script.js"></script>
+</body>
+</html>
