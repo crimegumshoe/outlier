@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <button id="filter-all" class="active">All</button>
                     <button id="filter-long">Long-form</button>
                     <button id="filter-short">Shorts</button>
+                    <button id="filter-faceless">✨ Faceless</button>
                 </div>
                 <div class="control-group">
                     <input type="text" id="search-input" class="search-input" placeholder="Search by title...">
@@ -105,6 +106,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <a href="https://www.youtube.com/watch?v=${video.video_id}" target="_blank">
                         <img src="${video.thumbnail_url}" alt="Video thumbnail">
                         <span class="video-type-badge">${video.type}</span>
+                        ${video.is_faceless ? '<span class="video-type-badge faceless-badge">FACELESS</span>' : ''}
                     </a>
                 </div>
                 <div class="card-content">
@@ -152,6 +154,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Apply search filter
         if (searchTerm) {
             filtered = filtered.filter(v => v.title.toLowerCase().includes(searchTerm));
+        }
+
+        // Apply faceless filter
+        if (activeFilter === 'filter-faceless') {
+            filtered = filtered.filter(v => v.is_faceless);
         }
         
         renderOutliers(filtered);
